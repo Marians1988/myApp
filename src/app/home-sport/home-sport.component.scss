@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  .textStyle{
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+  }
+  .textMatchesStyle{
+    font-size: 18px;
+  }
+  
+  .body {
+    padding: 0.8em ;
+  }
+    
+  .padding-left-4px{
+    padding-left: 6px;
+  }
+  
+  .padding-top-4px{
+    padding-top: 6px;
+  }
+  
+  .padding-bottom-4px{
+    padding-bottom: 6px;
+  }
+    

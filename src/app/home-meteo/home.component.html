@@ -1,0 +1,50 @@
+<div class="container">
+  <app-navigation-bar [disableMeteoButton]="disableMeteoButton"  [disableSportButton]="disableSportButton" [title]="titleMeteo" ></app-navigation-bar>  
+    <div class="body">
+      <mat-divider></mat-divider> 
+        <div *ngFor="let item of forecast">
+          <mat-divider></mat-divider> 
+          <mat-card  (click)="onClickItems(item)">
+            <mat-card-title>
+              <div
+                fxLayout="column"
+                fxLayoutAlign="space-between"
+              >
+                <div class=" padding-bottom-4px">
+                  <span>
+                    {{item.date| date :'fullDate'}} 
+                  </span>
+                </div>
+                <div>
+                  <span>
+                    {{location.location.name}} ({{location.location.country}})                  
+                  </span>
+                </div>
+              </div>
+            </mat-card-title>
+            <div fxLayoutAlign="start">
+             <div fxLayout="column">
+                <img mat-card-avatar src={{item.day.condition.icon}} alt="No photo">
+                <mat-card-subtitle>
+                  <span>
+                    {{item.day.condition.text}} 
+                  </span>
+                </mat-card-subtitle>
+              </div>
+            </div>
+            <mat-card-content>
+              <span > 
+                Temp_c : {{item.day.avgtemp_c}}°
+              </span>
+              <span class="padding-left-4px">
+                Humidity : {{item.day.avghumidity}}%
+              </span>
+              <span class="padding-left-4px">
+                Precip_mm : {{item.day.totalprecip_mm}}.
+              </span>
+            </mat-card-content>
+          </mat-card>
+        </div>
+    </div>
+</div>
+

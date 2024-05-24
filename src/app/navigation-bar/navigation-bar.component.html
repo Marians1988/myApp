@@ -1,0 +1,28 @@
+<mat-toolbar >
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item
+        [disabled]="disableMeteoButton" 
+        (click)="onClickMeteo()"
+        >
+            <mat-icon>filter_drama</mat-icon>
+            <span>Weather</span>
+        </button>
+        <button mat-menu-item
+        [disabled]="disableSportButton" 
+        (click)="onClickSport()"
+        >
+            <mat-icon>sports_soccer</mat-icon>
+            <span>Sport</span>
+        </button>
+     </mat-menu>
+    <span>{{title}}</span>
+        <div class="navbar-brand">
+    </div>       
+</mat-toolbar>
+    
+    
+    
+    

@@ -1,0 +1,39 @@
+<div class="container">
+    <app-navigation-bar [disableMeteoButton]="disableMeteoButton"  [disableSportButton]="disableSportButton" [title]="titleSport"></app-navigation-bar>  
+    <div class="body">
+        <mat-divider></mat-divider> 
+          <div *ngFor="let item of matches">
+            <mat-divider></mat-divider> 
+            <mat-card  (click)="onClickItems(item)">
+              <mat-card-title>
+                <div
+                  fxLayout="column"
+                  fxLayoutAlign="space-between"
+                >
+                <div   
+                    fxLayout="row"
+                    class="padding-bottom-4px">
+                    <span>
+                      {{item.tournament}}    
+                    </span>
+                    <span>
+                        <img class="padding-left-4px" src="https://www.countryflags.io/{{ flag(item) }}/flat/24.png">
+                     </span>
+                  </div>
+                  <div>
+                    <span class="textMatchesStyle">
+                      {{item.match}}            
+                    </span>
+                  </div>
+                </div>
+              </mat-card-title>
+              <mat-card-subtitle>
+                    {{item.start  | date :'medium' }} 
+                </mat-card-subtitle>
+              <mat-card-content>
+                  Stadium : {{item.stadium}}
+              </mat-card-content>
+            </mat-card>
+          </div>
+      </div>
+</div>
